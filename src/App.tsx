@@ -174,13 +174,14 @@ const Hero = ({ theme }: { theme: ThemeMode }) => {
               <h2 className={`text-sm md:text-lg uppercase tracking-[0.5em] mt-8 mb-4 font-semibold transition-all duration-500 ${isNight ? 'font-night text-fuchsia-500 bg-fuchsia-500/10 px-6 py-2 border border-fuchsia-500/20' : 'text-dark-bg/70'}`}>
                 High Ticket Closer
               </h2>
-              <div className={`h-0.5 my-6 transition-all duration-700 ${isNight ? 'bg-fuchsia-500 w-full max-w-md shadow-[0_0_20px_rgba(217,70,239,0.6)]' : 'gold-line w-24'}`} />
+              <div className={`h-0.5 my-6 transition-all duration-700 ${isNight ? 'bg-fuchsia-500 w-full max-w-md shadow-[0_0_20px_rgba(217,70_239,0.6)]' : 'gold-line w-24'}`} />
               <p className={`text-xl md:text-3xl max-w-2xl leading-relaxed transition-all duration-500 ${isNight ? 'font-night text-left text-white/70 uppercase tracking-tight' : 'text-dark-bg italic font-serif'}`}>
                 Trabajando con conexión real, que por fin tu cliente se sienta entendido.
               </p>
             </div>
           </div>
         </Reveal>
+
 
         <motion.div 
           animate={{ y: [0, 10, 0] }}
@@ -207,11 +208,9 @@ const Stats = ({ theme }: { theme: ThemeMode }) => {
         referrerPolicy="no-referrer"
       />
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center max-w-4xl mx-auto">
           {[
-            { target: 10, label: "Años de experiencia digital", sub: "SISTEMAS • DISEÑO • CINE" },
             { target: 40, label: "Closing Rate Reciente", suffix: "%" },
-            { target: 16000, label: "dólares generados", prefix: "$" },
             { target: 3000, label: "Ticket Promedio Cerrado", prefix: "$" }
           ].map((stat, i) => (
             <Reveal key={i}>
@@ -230,7 +229,6 @@ const Stats = ({ theme }: { theme: ThemeMode }) => {
                     {stat.label}
                   </p>
                 </div>
-                {stat.sub && <p className={`text-[10px] mt-1 ${isNight ? 'text-fuchsia-300/20 font-night' : 'text-gray-500'}`}>{stat.sub}</p>}
               </motion.div>
             </Reveal>
           ))}
@@ -356,7 +354,7 @@ const WhyMe = ({ theme }: { theme: ThemeMode }) => {
                 className={`rounded-2xl transition-all duration-500 border border-transparent p-8 ${isNight ? 'hover:bg-fuchsia-500/5 hover:border-fuchsia-500/10' : 'hover:bg-gold/5 hover:border-gold/10'}`}
               >
                 <p className={`text-2xl md:text-4xl leading-tight mb-8 transition-colors ${isNight ? 'font-night text-white uppercase tracking-tighter font-bold' : 'font-serif italic'}`}>
-                  "Vengo de un trasfondo de 10 años donde se unieron el cine, la ingeniería, el diseño y las ventas, por eso no soy un closer mas. No sigo guiones de rutina; utilizo esa experiencia para entender profundamente a la persona detrás del prospecto."
+                  "Vengo de un trasfondo de años donde se unieron el cine, la ingeniería y el diseño que me permitieron tener una visión mas PROFUNDA de las ventas, por eso no soy un closer mas. No sigo guiones de rutina; utilizo esa experiencia para entender profundamente a la persona detrás del prospecto."
                 </p>
                 <div className={`h-1 mb-8 transition-colors ${isNight ? 'bg-fuchsia-500 w-full shadow-[0_0_20px_rgba(217,70,239,0.8)]' : 'bg-gold w-20'}`} />
                 <p className={`text-lg leading-relaxed transition-colors ${isNight ? 'text-fuchsia-100/40 font-night' : 'text-gray-400'}`}>
@@ -471,7 +469,6 @@ export default function App() {
       <Trajectory theme={theme} />
       <WhyMe theme={theme} />
       <Approach theme={theme} />
-      
       <Footer theme={theme} />
     </div>
   );

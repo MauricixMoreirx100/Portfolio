@@ -38,4 +38,15 @@
     @apply h-0.5 w-24 mx-auto my-6;
     background: linear-gradient(90deg, transparent, theme('colors.gold'), transparent);
   }
+
+  @media print {
+    @page {
+      margin: 0;
+      size: auto;
+    }
+    body {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
 }
